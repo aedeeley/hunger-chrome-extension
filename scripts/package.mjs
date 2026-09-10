@@ -2,7 +2,7 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { resolve, join } from "node:path";
 import { deflateRawSync } from "node:zlib";
 const root = resolve(import.meta.dirname, "..");
-const files = ["manifest.json", "README.md", "PRIVACY.md"];
+const files = ["manifest.json", "README.md", "PRIVACY.md", "PUBLISHING.md"];
 for (const dir of ["src", "pages", "icons"]) for (const file of await readdir(join(root, dir))) files.push(`${dir}/${file}`);
 // Small, dependency-free ZIP writer. Packages only extension assets and docs.
 const table = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
