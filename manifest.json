@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Hunger — Food Ordering Blocker",
+  "version": "1.0.0",
+  "description": "Block food ordering websites and hide related links, promotions, and mentions. Private, local, and customizable.",
+  "minimum_chrome_version": "121",
+  "permissions": ["storage", "declarativeNetRequest", "alarms"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "src/background.js", "type": "module" },
+  "action": {
+    "default_title": "Hunger",
+    "default_popup": "pages/popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "options_page": "pages/options.html",
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["src/catalog.js", "src/core.js", "src/content.js"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "match_origin_as_fallback": true
+  }],
+  "web_accessible_resources": [{
+    "resources": ["pages/blocked.html"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'" }
+}

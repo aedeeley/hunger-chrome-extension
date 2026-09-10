@@ -1,0 +1,15 @@
+{
+  "name": "hunger-chrome-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local, Manifest V3 food ordering blocker.",
+  "scripts": {
+    "test": "node --test tests/core.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "engines": { "node": ">=20.11" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

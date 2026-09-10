@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Your blocklist · Hunger</title><link rel="stylesheet" href="styles.css"><script type="module" src="options.js"></script></head>
+<body class="options">
+  <div class="settings-shell">
+    <aside class="sidebar">
+      <a class="brand" href="options.html"><span class="mark" aria-hidden="true">h</span>hunger<span class="brand-dot">.</span></a>
+      <p class="sidebar-tagline">Make room for<br>something better.</p>
+      <nav aria-label="Settings sections"><a class="nav-active" href="#protection">Your protection <span>01</span></a><a href="#blocklist">Blocklist <span>02</span></a><a href="#custom">Your additions <span>03</span></a><a href="#about">Good to know <span>04</span></a></nav>
+      <div class="sidebar-bottom"><span class="tiny-dot"></span> PRIVATE BY DESIGN<p>Everything stays<br>on this device.</p><small>HUNGER / VERSION 1.0</small></div>
+    </aside>
+    <main class="settings-main">
+      <header class="settings-header"><span class="eyebrow">A QUIETER CORNER OF THE INTERNET</span><span id="status" class="status">Loading protection…</span></header>
+      <section id="protection" class="settings-intro"><h1>Your space.<br>Your boundaries.</h1><p>Fewer food delivery ads. Fewer ordering rabbit holes.<br>Choose what you want to keep out of view.</p></section>
+      <section class="protection-panel" aria-label="Protection settings">
+        <div class="panel-heading"><div><h2>Protection</h2><p>Small switches. A calmer scroll.</p></div><button id="pause" class="button secondary" disabled>Pause for 15 minutes</button></div>
+        <label class="control-row"><span><strong>Enable Hunger</strong><small>Your main switch for all blocking and filtering</small></span><input id="enabled" type="checkbox" role="switch" disabled><span class="switch" aria-hidden="true"></span></label>
+        <label class="control-row"><span><strong>Block food ordering websites</strong><small>Redirect visits and block resources from covered domains</small></span><input id="blockSites" type="checkbox" role="switch" disabled><span class="switch" aria-hidden="true"></span></label>
+        <label class="control-row"><span><strong>Hide service mentions and links</strong><small>Hide matching text, search results, cards, and labeled images</small></span><input id="hideMentions" type="checkbox" role="switch" disabled><span class="switch" aria-hidden="true"></span></label>
+        <label class="control-row"><span><strong>Hide ordering promotions</strong><small>Also match phrases like “food delivery” and “order takeout”</small></span><input id="hidePromotions" type="checkbox" role="switch" disabled><span class="switch" aria-hidden="true"></span></label>
+      </section>
+      <section id="blocklist" class="settings-section">
+        <div class="section-heading"><div><span class="eyebrow">01 / COVERAGE</span><h2>Keep it off the menu.</h2></div><span id="coverage-count" class="count-label">Loading…</span></div>
+        <p class="section-description">Choose whole categories. Restaurant categories block the full listed websites, including menus and other pages.</p>
+        <div id="categories" class="category-grid"></div>
+        <details class="catalog-details"><summary>See the included services <span aria-hidden="true">+</span></summary><div class="catalog-body"><label class="search-label" for="service-search">Search the starter list</label><input id="service-search" type="search" placeholder="Find a service or domain…"><div id="service-list" class="service-list"></div></div></details>
+      </section>
+      <section id="custom" class="settings-section">
+        <div class="section-heading"><div><span class="eyebrow">02 / MAKE IT YOURS</span><h2>A little more personal.</h2></div></div>
+        <p class="section-description">Found something we missed? Add it here. Your additions apply alongside the categories above.</p>
+        <div class="custom-grid">
+          <div class="custom-panel"><h3>Blocked websites</h3><p>A domain covers its subdomains, too.</p><form id="domain-form"><label for="domain-input" class="search-label">Website domain</label><div class="input-action"><input id="domain-input" placeholder="example.com" autocomplete="off" required maxlength="253"><button class="button primary" type="submit" disabled>Add</button></div></form><div id="custom-domains" class="chips"></div></div>
+          <div class="custom-panel"><h3>Hidden words & phrases</h3><p>Use specific names to avoid unwanted matches.</p><form id="keyword-form"><label for="keyword-input" class="search-label">Word or phrase</label><div class="input-action"><input id="keyword-input" placeholder="A delivery service name" autocomplete="off" required minlength="2" maxlength="80"><button class="button primary" type="submit" disabled>Add</button></div></form><div id="custom-keywords" class="chips"></div></div>
+        </div>
+      </section>
+      <section id="about" class="about-panel"><span class="eyebrow">GOOD TO KNOW</span><h2>Helpful boundaries, honestly.</h2><p>Hunger matches a curated list of domains, names, and ordering phrases. It can’t recognize every service, unlabeled image, video ad, or native app. Some matching articles will be hidden, too. Groceries on general shopping sites aren’t covered automatically.</p><p>Everything is processed locally. No accounts, analytics, browsing history logs, or remote requests. Chrome’s “read and change” permission lets Hunger hide content on the pages you visit. After installing or reloading the extension, refresh existing tabs. Chrome’s own pages and the Chrome Web Store can’t be filtered.</p><p>Switching filtering off restores hidden content. Blocked network resources may need a page refresh. Incognito works only if you allow it in Chrome’s extension settings.</p></section>
+      <footer class="settings-footer"><span>More intention. Less noise.</span><span>hunger.</span></footer>
+    </main>
+  </div>
+  <div class="save-message"><p id="message" class="message" role="status" aria-live="polite"></p></div>
+</body>
+</html>
