@@ -48,7 +48,7 @@ Source: [Chrome Web Store image requirements](https://developer.chrome.com/docs/
 
 **Short description:** Block food ordering websites and hide related links, promotions, and mentions. Private, local, and customizable.
 
-**Suggested category:** Productivity, or the closest matching category offered in the dashboard.
+**Suggested category:** Well-being, for the extension's personal habit and self-help purpose.
 
 **Language:** English
 
@@ -104,11 +104,15 @@ No remote code. All JavaScript, CSS, matching rules, and service catalog data ar
 
 ### Data handling
 
-The extension locally reads page text, labels, and URLs to perform its core filtering. It stores preferences and custom lists locally. It does not transmit or collect these data on a developer-controlled server, sell data, use data for advertising, or retain browsing activity logs. Declare local access/use accurately when answering the dashboard's current questions; do not equate “no server collection” with “no access to webpage content.”
+The extension locally reads page text, labels, and URLs to perform its core filtering. It stores preferences and custom lists locally. It does not transmit these data to a developer-controlled server, sell data, use data for advertising, or retain browsing activity logs. Google's User Data FAQ requires disclosure even when processing/storage is entirely on the user's device.
+
+For the current implementation, the recommended category declarations are **Website content** (locally scanned text, labels, and links) and **Web history** (the URLs/domains of pages and resources locally checked for blocking; no historical browsing log is retained). This is a mapping of the current implementation to the dashboard categories, not a claim of remote data collection. The extension does not separately collect identities, health records, payment details, authentication credentials, personal communications, location, or user-activity logs. A general page-content scan is not a feature for extracting those separate types of information.
+
+Select **No, I am not using remote code**. For the current implementation, the standard certifications against selling/transferring data outside approved uses, using data for unrelated purposes, and using data for creditworthiness or lending are consistent with the code and privacy policy. The publisher should read and confirm the actual certifications shown in the dashboard.
 
 The full public privacy policy is at the URL above. The account owner should review and make the required data-use certifications in the dashboard.
 
-Source: [Privacy fields](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy).
+Sources: [Privacy fields](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy), [local data handling disclosure requirements](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq).
 
 ## 6. Reviewer test instructions
 
